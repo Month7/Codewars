@@ -245,32 +245,176 @@
 // }
 
 // {
-//     var fibonacci = function(n) {
-//         var arr=new Array(n);
-//         arr[0]=0;
-//         arr[1]=1;
+    // var fibonacci = function(n) {
+    //     var arr=new Array(n);
+    //     arr[0]=0;
+    //     arr[1]=1;
        
-//         for(var i=2;i<n+1;i++){
-//             arr[i]=arr[i-1]+arr[i-2];
-//         }
+    //     for(var i=2;i<n+1;i++){
+    //         arr[i]=arr[i-1]+arr[i-2];
+    //     }
     
         
-//         return arr[n];
-//     }
+    //     return arr[n];
+    // }
 //     console.log(fibonacci(70));
 // }
 
-{
-    function multipleOfIndex(array) {
-        // good luck
-        var res=[];
-        for(var i=0;i<array.length;i++){
-            if(array[i]%(i)==0){
+// {
+//     function multipleOfIndex(array) {
+//         // good luck
+//         var res=[];
+//         for(var i=0;i<array.length;i++){
+//             if(array[i]%(i)==0){
                 
-                res.push(array[i]);
-            }
+//                 res.push(array[i]);
+//             }
+//         }
+//         return res;
+//     }
+//     console.log(multipleOfIndex([-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68]));
+// }
+
+// {
+//     function getLengthOfMissingArray(arrayOfArrays) {
+//         if(arrayOfArrays==null){
+//             return 0;
+//         }
+//         var len=[];
+//         if(arrayOfArrays.length==0||arrayOfArrays.length==1){
+//             return 0;
+//         }
+//         for(var i=0;i<arrayOfArrays.length;i++){
+//             if(arrayOfArrays[i]==null){
+//                 return 0;
+//             }
+//         }
+//         for(var i=0;i<arrayOfArrays.length;i++){
+//             len.push(arrayOfArrays[i].length);
+//         }
+//         if(len==null){
+//             return 0;
+//         }
+//         if(len.length==1){
+//             return 0;
+//         }
+//         for(var i=0;i<len.length;i++){
+//             if(len[i]==0){
+//                 return 0;
+//             }
+//         }
+//         for(var i=0;i<len.length;i++){
+//             for(var j=i+1;j<len.length;j++){
+//                 if(len[i]>len[j]){
+//                     var temp=len[i];
+//                     len[i]=len[j];
+//                     len[j]=temp;
+//                 }
+//             }
+//         }
+//         for(var i=0;i<len.length-1;i++){
+//             if(len[i+1]!=len[i]+1){
+//                 return len[i]+1;
+//             }
+//         }
+//         return 0;
+//     }
+//     console.log(getLengthOfMissingArray([null,null]));
+// }
+
+// {
+//     function isValidWalk(walk) {
+//         //insert brilliant code here
+//         if(walk.length!=10){
+//             return false;
+//         }
+//         var s=0;
+//         var n=0;
+//         var w=0;
+//         var e=0;
+//         for(var i=0;i<walk.length;i++){
+//             if(walk[i]=='s'){
+//                 s++;
+//             }
+//             else if(walk[i]=='n'){
+//                 n++;
+//             }
+//             else if(walk[i]=='w'){
+//                 w++;
+//             }
+//             else if(walk[i]=='e'){
+//                 e++;
+//             }
+//         }
+//         if(w==e&&s==n){
+//             return true;
+//         }
+//         return false;
+//     }
+//     console.log(isValidWalk(['e','w','w','e','s','n','n','n','s','s']))
+// }
+
+// {
+//     function Xbonacci(signature,n){
+//         var res=new Array(n);
+//         var begin=0;
+//         for(var i=0;i<n;i++){
+//             res[i]=signature[i];
+//         }
+//         var len=signature.length;
+//         var num=0;
+//         var start=0;
+//         var end=start+len-1;  
+        
+
+//         for(var i=signature.length;i<n;i++){
+//             console.log(n);
+//             for(var i=start;i<=end;i++){
+//                 if(res[i]!=undefined){
+//                     num+=res[i];
+//                 }
+//             }
+//             start++;
+//             end++;
+           
+//             console.log("i="+i);
+//             res[i]=num;
+//             num=0;
+//         }
+//         return res;
+//     }
+//     // console.log(Xbonacci([0,1],10));
+//     // console.log(Xbonacci([1,1],10));
+//     // console.log(Xbonacci([0,0,0,0,1],10));
+//     // console.log(Xbonacci([1,0,0,0,0,0,1],10));
+//     // console.log(Xbonacci([1,0,0,0,0,0,0,0,0,0],20));
+//      console.log(Xbonacci([16, 17, 3, 11, 1, 11, 15],5));
+// }
+
+{
+    function race(v1, v2, g) {
+        // your code
+        var res=new Array(3);
+        if(v1>v2){
+            return null;
         }
+        var hour=0;
+        var min=0;
+        var src=0;
+        var v=(v2-v1)/3600;
+        var time=g/v;
+        hour=time/3600;
+        hour=Math.floor(hour);
+        time-=hour*3600;
+        min=time/60;
+        min=Math.floor(min);
+        time-=min*60;
+        sec=time;
+        sec=Math.floor(sec);
+        res[0]=hour;
+        res[1]=min;
+        res[2]=sec;
         return res;
     }
-    console.log(multipleOfIndex([-56,-85,72,-26,-14,76,-27,72,35,-21,-67,87,0,21,59,27,-92,68]));
+    console.log(race(720, 850, 70));
 }
