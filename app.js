@@ -618,7 +618,7 @@
 //     console.log(step(2,100,110));
 // }
 
-{
+// {
     // function chooseBestSum(t, k, ls) {
     //     // your code
     //     ls.sort();
@@ -643,48 +643,148 @@
     //     return max;
     // }
    
-}
-{
-    // function chooseBestSum(t, k, ls) {
-    //     var biggestCount = 0;
-    //     var recurseTowns = function(townsSoFar, lastIndex) {
-    //       townsSoFar = townsSoFar || [];
-    //       //base case
-    //       if (townsSoFar.length === k) {
-    //         var sumDistance = townsSoFar.reduce((a,b)=>a+b);
-    //         console.log(sumDistance);
-    //         if (sumDistance <= t && sumDistance > biggestCount) {
-    //           biggestCount = sumDistance;
-    //         }      
-    //         return; //EJECT
-    //       }
-    //       //recursive case
-    //       for (var i = lastIndex + 1 || 0; i < ls.length; i++) {
-    //         recurseTowns(townsSoFar.concat(ls[i]), i);
-    //       }
-    //     }
-    //     recurseTowns();
-    //     return biggestCount || null;
-    //   }
-    function chooseBestSum(t, k, ls) {
-        let best = null;
-        function f(l,s,z) {
-          for (let i=z; i<ls.length;i++) {
-            let _l = l+1,
-                _s = s + ls[i],
-                _z = i+1;
-            if ( _l===k && _s <= t && _s > best) best = _s;
-            if (_l < k && _s < t) f(_l,_s,_z);
-          }
-        }
-        f(0,0,0);
-        return best;
-      }
-      var ts = [50, 55, 57, 56, 58];
-      var ys=[91,74,73,85,73,81,87];
-      console.log((chooseBestSum(163, 3, ts)));
-    //   console.log(chooseBestSum(230,3,ys));
-    /**
-     * v=
-     */
-}
+// }
+// {
+//     // function chooseBestSum(t, k, ls) {
+//     //     var biggestCount = 0;
+//     //     var recurseTowns = function(townsSoFar, lastIndex) {
+//     //       townsSoFar = townsSoFar || [];
+//     //       //base case
+//     //       if (townsSoFar.length === k) {
+//     //         var sumDistance = townsSoFar.reduce((a,b)=>a+b);
+//     //         console.log(sumDistance);
+//     //         if (sumDistance <= t && sumDistance > biggestCount) {
+//     //           biggestCount = sumDistance;
+//     //         }      
+//     //         return; //EJECT
+//     //       }
+//     //       //recursive case
+//     //       for (var i = lastIndex + 1 || 0; i < ls.length; i++) {
+//     //         recurseTowns(townsSoFar.concat(ls[i]), i);
+//     //       }
+//     //     }
+//     //     recurseTowns();
+//     //     return biggestCount || null;
+//     //   }
+//     function chooseBestSum(t, k, ls) {
+//         let best = null;
+//         function f(l,s,z) {
+//           for (let i=z; i<ls.length;i++) {
+//             let _l = l+1,
+//                 _s = s + ls[i],
+//                 _z = i+1;
+//             if ( _l===k && _s <= t && _s > best) best = _s;
+//             if (_l < k && _s < t) f(_l,_s,_z);
+//           }
+//         }
+//         f(0,0,0);
+//         return best;
+//       }
+//       var ts = [50, 55, 57, 56, 58];
+//       var ys=[91,74,73,85,73,81,87];
+//       console.log((chooseBestSum(163, 3, ts)));
+//     //   console.log(chooseBestSum(230,3,ys));
+//     /**
+//      * v=
+//      */
+// }
+
+// {
+//     function reOrderArray(array){
+//     // write code here
+        
+//         var odd=[];
+//         var ign=[];
+//         for(var i=0;i<array.length;i++){
+//             if(array[i]%2==0){
+//                 ign.push(array[i]);
+                
+//             }
+//             else{
+//                 odd.push(array[i]);
+               
+//             }
+//         }
+//         var res=odd.concat(ign);
+//         return res;
+//     }
+//     var array=[8,7,9,6,3,4,2,1];
+//     console.log(reOrderArray(array));
+// }
+
+// {
+//     function ListNode(x){
+//         this.val = x;
+//         this.next = null;
+//     }
+//     function ReverseList(pHead){
+//         if(pHead==null||pHead.next==null){
+//             return pHead;
+//         }
+//         var newList=null;
+//         var temp=null;
+//         newList=ReverseList(pHead.next);
+//         temp=pHead.next;
+//         temp.next=pHead;
+//         pHead.next=null;
+//         temp=null;
+//         return newList;
+//     }
+  
+// }
+
+// {
+//     function ListNode(x){
+//         this.val = x;
+//         this.next = null;
+//     }
+//     function Merge(pHead1, pHead2){
+//         // write code here
+//         if(pHead1==null){
+//             return pHead1;
+//         }
+//         else if(pHead2==null){
+//             return pHead2;
+//         }
+//         var res=new ListNode(0);
+//         while(pHead1!=null&&pHead2!=null){
+//             if(pHead1.val<=pHead2.val){
+//                 res.next=pHead1;
+//                 pHead1=pHead1.next;
+                
+//             }
+//             else if(pHead1.val>=pHead2.val){
+//                 res.next=pHead2;
+//                 pHead2=pHead2.next;
+//             }
+//             res=res.next;
+//         }
+//         if(pHead1!=null){
+//             res.next=pHead1;
+//         }
+//         if(pHead2!=null){
+//             res.next=pHead2;
+//         }
+//         return ;
+//     }
+// }
+
+// {
+//     function IsPopOrder(pushV, popV){
+//         // write code here
+//         var stack=[];
+//         var j=0;
+//         for(var i=0;i<pushV.length;i++){
+//             stack.push(pushV[i]);
+//             while(stack.length&&stack[stack.length-1]==popV[j]){
+//                 stack.pop();
+//                 j++;
+//             }
+//         }
+//         return stack.length==0;
+
+//     }
+//     console.log(IsPopOrder([1,2,3,4,5],[4,5,3,2,1]));
+//     console.log(IsPopOrder([1,2,3,4,5],[4,3,5,1,2]));
+// }
+
