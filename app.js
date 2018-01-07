@@ -391,30 +391,300 @@
 //      console.log(Xbonacci([16, 17, 3, 11, 1, 11, 15],5));
 // }
 
+// {
+//     function race(v1, v2, g) {
+//         // your code
+//         var res=new Array(3);
+//         if(v1>v2){
+//             return null;
+//         }
+//         var hour=0;
+//         var min=0;
+//         var src=0;
+//         var v=(v2-v1)/3600;
+//         var time=g/v;
+//         hour=time/3600;
+//         hour=Math.floor(hour);
+//         time-=hour*3600;
+//         min=time/60;
+//         min=Math.floor(min);
+//         time-=min*60;
+//         sec=time;
+//         sec=Math.floor(sec);
+//         res[0]=hour;
+//         res[1]=min;
+//         res[2]=sec;
+//         return res;
+//     }
+//     console.log(race(720, 850, 70));
+// }
+
+// {
+//     function Node(data) {
+//         this.data = data;
+//         this.next = null;
+//     }
+      
+//     function length(head) {
+//         // Your code goes here.
+//         var length=0;
+        
+//         while(head!=null){
+//             length++;
+//             head=head.next;
+//         }
+//         return length;
+//     }
+      
+//     function count(head, data) {
+//         // Your code goes here.
+//         var count=0;
+//         while(head!=null){
+//             if(head.data==data){
+//                 count++;
+//             }
+//             head=head.next;
+//         }
+//         return count;
+//     }
+// }
+
+// {
+    // function Node(data) {
+    //     this.data = data;
+    //     this.next = null;
+    // }
+      
+    // function push(head, data) {
+    //     // Go.
+    //     if(head==null){
+    //         var Link=new Node(data);
+    //         return Link;
+    //     }
+    //     else{
+    //         var p=new Node(data);
+    //         var L=new Node(data);
+    //         L.next=head;
+    //         return L;
+    //     }
+    // }
+      
+    // function buildOneTwoThree() {
+    //     // Go.
+    //     var link=new Node(3);
+    //     link=push(link,2);
+    //     link=push(link,1);
+    //     return link;
+    // }
+//     console.log(push(new Node(1),2).data);
+//     console.log(buildOneTwoThree().data);
+//     console.log(buildOneTwoThree().next.data);
+//     console.log(buildOneTwoThree().next.next.data);
+// }
+
+// {
+//     var list=buildOneTwoThree();
+//     function Node(data) {
+//         this.data = data;
+//         this.next = null;
+//     }
+      
+//     function getNth(node, index) {
+//         // Your code goes here.
+//         if(node==null){
+//             return false;
+//         }
+//         if(index==0){
+//             return node.data;
+//         }
+//         for(var i=0;i<index;i++){
+//             if(node==null){
+//                 return false;
+//             }
+//             node=node.next;
+//         }
+//         if(node==null){
+//             return false;
+//         }
+//         return node.data;
+//     }
+//     console.log(getNth(list,100));
+// }
+
+// {
+//     function high(x){
+//         var arr=x.split(" ");
+//         var max=-1;
+//         var res;
+//         var sum;
+//         for(var i=0;i<arr.length;i++){
+//             if(arr[i]=='volcano'){
+//                 return 'volcano';
+//             }
+//             var asc=0;
+//             var each="";
+//             each=arr[i];
+//             each=each.split("");
+//             sum=0;
+            
+//             for(var j=0;j<each.length;j++){
+//                 sum+=each[j].charCodeAt();
+//             }
+           
+//             if(sum>max){
+//                 max=sum;
+              
+//                 res=each;
+//             }
+//         }
+//         return res.join("");
+//     }
+//     console.log(high('what time are we climbing up the volcano'));
+// }
+
+// {
+//     function domainName(url){
+//         var reg=/[^http://|^https://|^www.]+/i;
+//         if((/^(www.)+/i).test(url)){
+//             var res=url.match(/www.(\S*)/);
+//             var arr=res[1].split(".");
+//             return arr[0];
+//         } 
+//         else if((/^(https:\/\/www.)+/i).test(url)){  
+//             var res=url.match(/https:\/\/www.(\S*)/);
+//             var arr=res[1].split(".");
+//             return arr[0];
+//         }
+//         else if((/^(http:\/\/www.)+/i).test(url)){
+//             var res=url.match(/http:\/\/www.(\S*)/);   
+//             var arr=res[1].split(".");
+//             return arr[0];
+//         }
+//         else if((/^(http:\/\/)+/i).test(url)){
+//             var res=url.match(/http:\/\/(\S*)/);
+//             var arr=res[1].split(".");
+//             return arr[0];
+//         }
+//         else if((/^(https:\/\/)+/i).test(url)){
+//             var res=url.match(/https:\/\/(\S*)/);
+//             var arr=res[1].split(".");
+//             return arr[0];
+//         }
+//         else{
+//             var arr=url.split(".");
+//             return arr[0];
+//         }
+//     }
+//     function domainName(url){
+
+//     }
+//     /*url解析*/
+//     function domainName(url){
+//         return url.match(/(?:http(?:s)?:\/\/)?(?:w{3}\.)?([^\.]+)/i)[1];
+//     }
+//     function domainName(url){
+//         url = url.replace("https://", '');
+//         url = url.replace("http://", '');
+//         url = url.replace("www.", '');
+//         return url.split('.')[0];
+//     };
+//     console.log((domainName("www.xakep.ru")));
+//     console.log((domainName("http://www.b0305gx1iwqixqt-t725wfbxre.info/archive/")));
+//     console.log((domainName("https://www.codewars.com/")));
+   
+// }
+
+// {
+//     function step(g, m, n) {
+//         // your code
+//         var res=[];
+//         for(var i=m;i<n;i++){
+//             if(judge(i)&&judge(i+g)){
+//                 res.push(i);
+//                 res.push(i+g);
+//                 return res;
+//             }
+//         }
+//         return null;
+//     }
+//     function judge(n){
+//         for(var i=2;i<n;i++){
+//             if(n%i==0){
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+//     console.log(step(2,100,110));
+// }
+
 {
-    function race(v1, v2, g) {
-        // your code
-        var res=new Array(3);
-        if(v1>v2){
-            return null;
+    // function chooseBestSum(t, k, ls) {
+    //     // your code
+    //     ls.sort();
+    //     ls.reverse();
+    //     var sum=0;
+    //     var start=0;
+    //     var max=-1;
+    //     for(var j=0;j<ls.length;j++){
+    //         sum=0;
+    //         for(var i=start;i<k+start;i++){
+    //             sum+=ls[i];
+    //         }
+    //         // console.log(sum);
+    //         if(sum>max&&sum<=t){
+    //             max=sum;
+    //             // console.log(max);
+    //         }
+    //         else{
+    //             start++;
+    //         }
+    //     }
+    //     return max;
+    // }
+   
+}
+{
+    // function chooseBestSum(t, k, ls) {
+    //     var biggestCount = 0;
+    //     var recurseTowns = function(townsSoFar, lastIndex) {
+    //       townsSoFar = townsSoFar || [];
+    //       //base case
+    //       if (townsSoFar.length === k) {
+    //         var sumDistance = townsSoFar.reduce((a,b)=>a+b);
+    //         console.log(sumDistance);
+    //         if (sumDistance <= t && sumDistance > biggestCount) {
+    //           biggestCount = sumDistance;
+    //         }      
+    //         return; //EJECT
+    //       }
+    //       //recursive case
+    //       for (var i = lastIndex + 1 || 0; i < ls.length; i++) {
+    //         recurseTowns(townsSoFar.concat(ls[i]), i);
+    //       }
+    //     }
+    //     recurseTowns();
+    //     return biggestCount || null;
+    //   }
+    function chooseBestSum(t, k, ls) {
+        let best = null;
+        function f(l,s,z) {
+          for (let i=z; i<ls.length;i++) {
+            let _l = l+1,
+                _s = s + ls[i],
+                _z = i+1;
+            if ( _l===k && _s <= t && _s > best) best = _s;
+            if (_l < k && _s < t) f(_l,_s,_z);
+          }
         }
-        var hour=0;
-        var min=0;
-        var src=0;
-        var v=(v2-v1)/3600;
-        var time=g/v;
-        hour=time/3600;
-        hour=Math.floor(hour);
-        time-=hour*3600;
-        min=time/60;
-        min=Math.floor(min);
-        time-=min*60;
-        sec=time;
-        sec=Math.floor(sec);
-        res[0]=hour;
-        res[1]=min;
-        res[2]=sec;
-        return res;
-    }
-    console.log(race(720, 850, 70));
+        f(0,0,0);
+        return best;
+      }
+      var ts = [50, 55, 57, 56, 58];
+      var ys=[91,74,73,85,73,81,87];
+      console.log((chooseBestSum(163, 3, ts)));
+    //   console.log(chooseBestSum(230,3,ys));
+    /**
+     * v=
+     */
 }
