@@ -788,3 +788,129 @@
 //     console.log(IsPopOrder([1,2,3,4,5],[4,3,5,1,2]));
 // }
 
+// {
+//     var array=[];
+//     function push(node){
+//         // write code here
+//         array.push(node);
+//     }
+//     function pop(){
+//         // write code here
+//         array.pop();
+//     }
+//     function top(){
+//         // write code here
+//         return array[array.length-1];
+//     }
+//     function min(){
+//         // write code here
+//         return Math.min.apply(null,array);
+//     }    
+// }
+
+// {
+//     /* function TreeNode(x) {
+//         this.val = x;
+//         this.left = null;
+//         this.right = null;
+//     } */
+  
+//     function TreeDepth(pRoot){
+//         // write code here
+//         if(pRoot==null){
+//             return 0;
+//         }
+//         var left=1+TreeDepth(pRoot.left);
+//         var right=1+TreeDepth(pRoot.right);
+//         return Math.max(left,right);
+//     }
+// }
+
+// {
+//     function multiply(array){
+//         var res=[];
+//         res[0]=1;
+//         for(var i=1;i<array.length;i++){
+//             res[i]=res[i-1]*array[i-1];
+//         }
+//         var temp=1;
+//         for(var j=array.length-2;j>-1;j--){
+//             temp*=array[j+1];
+//             res[j]=res[j]*temp;
+//         }
+//         return res;
+//     }
+//     var array=[1,2,3,4,5];
+//     console.log(multiply(array));  //120 60 40 30 24
+// }
+
+// {
+//     var array={};
+//     function Init(){
+//         // write code here
+//         array={};
+//     }
+//     //Insert one char from stringstream
+//     function Insert(ch){
+//         // write code here
+//         if(array[ch]==null){
+//             array[ch]=1;
+//         }
+//         else{
+//             array[ch]++;
+//         }
+//     }
+//     //return the first appearence once char in current stringstream
+//     function FirstAppearingOnce(){
+//         // write code here
+//         for(var ch in array){
+//             if(array.hasOwnProperty(array)){
+//                 if(array[ch]==1){
+//                     return ch;
+//                 }
+//             }
+//         }
+//         return '#';
+//     }
+// }
+
+// {
+//     /* function TreeNode(x) {
+//         this.val = x;
+//         this.left = null;
+//         this.right = null;
+//     } */
+//     function Mirror(root){
+//         // write code here
+//         if(root==null){
+//             return null;
+//         }
+//         var temp=root.left;
+//         root.left=root.right;
+//         root.right=temp;
+//         Mirror(root.left);
+//         Mirror(root.right);
+//     }
+// }
+
+{
+    /**
+     * 1   2 3  4
+     * 5   6 7  8
+     * 9  10 11 12
+     * 13 14 15 16
+     */ 
+    function printMatrix(matrix){
+        // write code here
+        var row=Math.sqrt(matrix.length);
+        var res=[];
+        for(var i=0;i<row;i++){
+            res[i]=matrix[i];
+        }
+        var k=0;
+        for(var i=row-1;i<row-1;i++){
+            res[i]=matrix[k];
+            k+=row;
+        }
+    }
+}
